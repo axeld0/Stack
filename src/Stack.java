@@ -24,24 +24,31 @@ public class Stack implements ICollectionInterface{
 
     @Override
     public int extract() {
-        counter--;
-        return a.remove(a.size()-1);
-
+        int i = 0;
+            counter--;
+            if(a.size() != 0) {
+                i = a.remove(a.size()-1);
+            }
+        return i;
     }
 
     @Override
     public boolean isEmpty() {
-        boolean empty = true;
-        if(a != null)
+        boolean empty = false;
+        if(a.size() == 0)
         {
-            empty =  false;
+            empty = true;
         }
         return empty;
     }
 
     public int first()
     {
-        return a.get(0);
+        int i  = 0;
+        if( a.size() != 0) {
+            i = a.get(a.size()-1);
+        }
+        return i;
     }
 
     @Override
